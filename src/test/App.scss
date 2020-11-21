@@ -1,0 +1,245 @@
+$blue: #015caa;
+$blueActive: #003d72;
+.tda {
+  &__mr-3 {
+    margin-right: 30px;
+  }
+  &__mt-2 {
+    margin-top: 20px;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (max-width: 1200) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__testQWrapper {
+    padding-left: 20px;
+
+    h5 {
+      font-size: 23px;
+      margin: 0 0 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+
+    ul {
+      margin-top: 0;
+      padding: 0;
+      background: #f0f0f0;
+      li {
+        padding: 10px 10px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        border-bottom: 1px solid lightgrey;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 16px;
+        outline: 0;
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          min-width: 15px;
+          max-width: 15px;
+          min-height: 15px;
+          max-height: 15px;
+          background: white;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          border: 1px solid lightgrey;
+          margin: 1px 10px 0 0;
+        }
+
+        &:hover {
+          color: $blue;
+          background: lightgrey;
+        }
+
+        &.tda__active-itm {
+          &::after {
+            border-radius: 50%;
+            content: '';
+            left: 15px;
+            top: 16px;
+            position: absolute;
+            min-width: 7px;
+            max-width: 7px;
+            min-height: 7px;
+            max-height: 7px;
+            background: #3498db;
+          }
+        }
+      }
+    }
+  }
+
+  &__questionResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    svg {
+      width: 100px;
+      height: 100px;
+
+      path {
+        fill: #1cc579;
+      }
+    }
+
+    &--error {
+      svg {
+        width: 100px;
+        height: 100px;
+
+        path {
+          fill: #e71722;
+        }
+      }
+
+      h2 {
+        color: #e71722;
+      }
+    }
+  }
+
+  &__btn {
+    text-decoration: none;
+    outline: 0;
+    background: transparent;
+    color: rgb(75, 75, 75);
+    border: 1px solid rgb(75, 75, 75);
+    box-shadow: none;
+    outline: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      border-color: $blue;
+      background: $blue;
+      color: white;
+    }
+    &:active {
+      border-color: $blueActive;
+      background: $blueActive;
+      color: white;
+    }
+
+    &--blue {
+      border-color: $blue;
+      background: $blue;
+      color: white;
+
+      &:hover {
+        border-color: $blueActive;
+        background: $blueActive;
+        color: white;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+  &__faildScreen,
+  &__successScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__successScreen {
+    svg {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  &__faildScreen {
+    h2 {
+      margin-bottom: 0;
+    }
+    img {
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  &__screenBtnWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__circleTextWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    & > span {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+  }
+  &__selectCountScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    select {
+      width: 300px;
+    }
+  }
+  &__select {
+    width: 300px;
+    div {
+      cursor: pointer;
+    }
+  }
+
+  &__questionErrorScreen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+
+    h4 {
+      margin: 0;
+      font-size: 19px;
+    }
+
+    .tda__btn {
+      margin: 20px auto;
+    }
+  }
+
+  &__error-list {
+    color: red;
+  }
+}
